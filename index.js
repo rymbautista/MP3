@@ -5,8 +5,8 @@ let lives = 3;
 let gameIsOver = false;
 
 function preload() {
-    catcherImage = loadImage('Basket.png');
-    apple = loadImage('apple.png');
+    catcherImage = loadImage('images/Basket.png');
+    apple = loadImage('images/apple.png');
   }
 
 function setup() {
