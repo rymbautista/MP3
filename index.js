@@ -77,13 +77,24 @@ stroke(51);
   textSize(16);
   fill('black');
   text(`Score: ${score}`, 10, 20);
-  text(`Lives: ${lives}`, width - 70, 20);
+  text(`Lives: ${lives}`, width - 80, 20);
 
   // End the game if it's over
   if (gameIsOver) {
     textSize(32);
     text("Game Over", width / 2 - 80, height / 2);
-    noLoop();
+    text("Press 'R' to Play again!", width / 2 - 150, height / 2 + 35);
+  }
+
+  if (kb.presses('R')) {
+    gameIsOver = false;
+    score = 0;
+    lives = 3;
+    for (let i = 0; i < objects.length; i++) {
+        objects[i].remove();
+      }
+      // Clear the array of falling sprites
+      objects = [];
   }
 
   // Draw the catcher and objects
