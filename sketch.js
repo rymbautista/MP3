@@ -79,7 +79,7 @@ function draw() {
   background('white');
   
   push();
-  drawpad();
+  //scale(.5);
   drawfrog();
   pop();
   
