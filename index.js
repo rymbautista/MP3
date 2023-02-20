@@ -7,6 +7,7 @@ let gameIsOver = false;
 function preload() {
     catcherImage = loadImage('images/Basket.png');
     apple = loadImage('images/apple.png');
+    hill = loadImage('images/Hills.png');
   }
 
 function setup() {
@@ -23,22 +24,24 @@ function draw() {
   fill('white');
   rect(0, 0, windowWidth, 30, 20);
 
-  fill('#3E9750');
-  noStroke();
-  beginShape();
-  curveVertex(0, height);
-  curveVertex(0, height);
-  curveVertex(50, height-150);
-  curveVertex(150, height-100);
-  curveVertex(200,  height/2+50);
-  curveVertex(300,  height/2);
-  curveVertex(windowWidth/2,  height-200);
-  curveVertex(windowWidth/1.5,  height/2);
-  curveVertex(windowWidth/1.2, windowHeight);
-  curveVertex(windowWidth/1.15, height);
-  curveVertex(windowWidth-100, height);
-  curveVertex(windowWidth, height);
-  endShape();
+//   fill('#3E9750');
+//   noStroke();
+//   beginShape();
+//   curveVertex(0, height);
+//   curveVertex(0, height);
+//   curveVertex(50, height-150);
+//   curveVertex(150, height-100);
+//   curveVertex(200,  height/2+50);
+//   curveVertex(300,  height/2);
+//   curveVertex(windowWidth/2,  height-200);
+//   curveVertex(windowWidth/1.5,  height/2);
+//   curveVertex(windowWidth/1.2, windowHeight);
+//   curveVertex(windowWidth/1.15, height);
+//   curveVertex(windowWidth-100, height);
+//   curveVertex(windowWidth, height);
+//   endShape();
+
+image(hill, 0, 0, windowWidth,windowHeight);
   
 
 fill('#4BB660');
@@ -81,6 +84,9 @@ stroke(51);
 
   // End the game if it's over
   if (gameIsOver) {
+    fill('white');
+    rect(windowWidth/2-190, windowHeight/2-67, 400, 150,50);
+    fill('black');
     textSize(32);
     text("Game Over", width / 2 - 80, height / 2);
     text("Press 'R' to Play again!", width / 2 - 150, height / 2 + 35);
